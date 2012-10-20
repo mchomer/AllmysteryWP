@@ -1,0 +1,78 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="Allmystery.SingleThreadPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"    
+    xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
+    xmlns:Ctrls="clr-namespace:Allmystery"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="PortraitOrLandscape" Orientation="Portrait"
+    mc:Ignorable="d" d:DesignHeight="696" d:DesignWidth="480"
+    shell:SystemTray.IsVisible="True" OrientationChanged="PhoneApplicationPage_OrientationChanged">
+    
+    <!--LayoutRoot ist das Stammraster, in dem alle anderen Seiteninhalte platziert werden-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">   
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        
+        <!--ContentPanel - zusätzliche Inhalte hier platzieren-->
+        <Grid x:Name="ContentPanel" HorizontalAlignment="Stretch" VerticalAlignment="Top" Grid.Row="0" Margin="0,17,0,0">           
+            <toolkit:GestureService.GestureListener>
+                <toolkit:GestureListener Flick="OnFlick" />
+            </toolkit:GestureService.GestureListener>
+            <TextBlock x:Name="ApplicationTitle" Text="{Binding Status}" Style="{StaticResource PhoneTextNormalStyle}" />
+            <TextBlock Height="29" HorizontalAlignment="Center" Margin="24,35,6,0" Name="tbltopic" Text="" VerticalAlignment="Top" Width="450" FontSize="20" TextAlignment="Center" TextWrapping="NoWrap" FontWeight="SemiBold" TextTrimming="WordEllipsis" />
+            <TextBlock Height="26" Margin="24,72,12,0" Name="tblpage" Text="" VerticalAlignment="Top" TextAlignment="Center" />
+            <phone:WebBrowser HorizontalAlignment="Center" Margin="0,102,0,0" Name="browser" VerticalAlignment="Top" Height="577" Width="480" Navigating="browser_Navigating" IsScriptEnabled="True" Background="Black" />
+        </Grid>
+
+        <Popup Name="avatarpopup" IsOpen="False" VerticalOffset="140" HorizontalOffset="40" HorizontalAlignment="Left">
+            <Border Background="#FF5A5C75" Width="384" Height="270">
+                <StackPanel>
+                    <TextBlock Name="tblusername" />
+                    <Button Content="{StaticResource lngAnswerTo}" Height="88" HorizontalAlignment="Left" Margin="6,0,0,0" Name="butanswerto" VerticalAlignment="Top" Width="368" Click="butanswerto_Click" />
+                    <Button Content="{StaticResource lngSpeakTo}" Height="88" HorizontalAlignment="Left" Margin="6,0,0,0" Name="butspeakto" VerticalAlignment="Top" Width="368" Click="butspeakto_Click" />
+                    <Button Content="{StaticResource lngShowProfile}" Height="88" HorizontalAlignment="Left" Margin="6,0,0,0" Name="butprofile" VerticalAlignment="Top" Width="368" Click="butprofile_Click" />
+                </StackPanel>
+            </Border>
+        </Popup>
+
+        <Popup Name="gotopagepopup" IsOpen="False" VerticalOffset="140" HorizontalOffset="40" HorizontalAlignment="Left">
+            <Border Background="#FF5A5C75" Width="384" Height="155">
+                <StackPanel>
+                    <TextBox Name="tbopage" Width="368" InputScope="Digits" TextAlignment="Center" />
+                    <Button Content="{StaticResource lngGoTo}" Height="88" HorizontalAlignment="Left" Margin="6,0,0,0" Name="butgoto" VerticalAlignment="Top" Width="368" Click="butgoto_Click" />
+                </StackPanel>
+            </Border>
+        </Popup>
+
+    </Grid>
+ 
+    <!--Beispielcode zur Verwendung von ApplicationBar-->
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True" BackgroundColor="#FF5A5C75" ForegroundColor="White">
+            <!--<shell:ApplicationBarIconButton IconUri="/appbar.folder.rest.png" Text="Im Browser öffnen" x:Name="abbbrowser" Click="abbbrowser_Click" />-->
+            <shell:ApplicationBarIconButton IconUri="/Model/Icons/Dark/appbar.back.rest.png" Text="{StaticResource lngPrevious}" x:Name="abbfirstpage" Click="abbfirstpage_Click" />
+            <shell:ApplicationBarIconButton IconUri="/Model/Icons/Dark/appbar.new.rest.png" Text="{StaticResource lngNewPost}" x:Name="abbnew" Click="abbnew_Click" />
+            <shell:ApplicationBarIconButton IconUri="/Model/Icons/Dark/appbar.refresh.rest.png" Text="{StaticResource lngRefresh}" Click="ApplicationBarIconButton_Click" />
+            <shell:ApplicationBarIconButton IconUri="/Model/Icons/Dark/appbar.next.rest.png" Text="{StaticResource lngNext}" x:Name="abblastpage" Click="abblastpage_Click" />
+            <shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem Text="{StaticResource lngFirst}" Click="ApplicationBarMenuItem_Click_2" />
+                <shell:ApplicationBarMenuItem Text="{StaticResource lngLast}" Click="ApplicationBarMenuItem_Click_3" />
+                <shell:ApplicationBarMenuItem Text="{StaticResource lngGoToPage}" Click="ApplicationBarMenuItem_Click_4" />
+                <shell:ApplicationBarMenuItem Text="{StaticResource lngAdd}" Click="ApplicationBarMenuItem_Click" />
+                <shell:ApplicationBarMenuItem Text="{StaticResource lngCategories}" Click="ApplicationBarMenuItem_Click_1" />
+            </shell:ApplicationBar.MenuItems>
+        </shell:ApplicationBar>
+        
+    </phone:PhoneApplicationPage.ApplicationBar>
+
+</phone:PhoneApplicationPage>

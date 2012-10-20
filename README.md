@@ -1,4 +1,5 @@
-Source Code of Allmystery Windows Phone-App can be found in "Allmystery.zip". 
+Version 1.1
+
 You need a copy of the NewtonSoft.Json.dll for Windows Phone. That Library can be found here:
 http://json.codeplex.com/ 
 

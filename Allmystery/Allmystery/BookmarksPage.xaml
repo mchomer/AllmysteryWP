@@ -1,0 +1,69 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="Allmystery.BookmarksPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+     xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d" d:DesignHeight="768" d:DesignWidth="480"
+    shell:SystemTray.IsVisible="True">
+
+    <!--LayoutRoot ist das Stammraster, in dem alle anderen Seiteninhalte platziert werden-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel enthält den Namen der Anwendung und den Seitentitel-->
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
+            <TextBlock x:Name="ApplicationTitle" Text="{Binding Status}" Style="{StaticResource PhoneTextNormalStyle}" Tap="ApplicationTitle_Tap" />
+            <TextBlock x:Name="PageTitle" Text="{StaticResource lngBookmarks}" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+        </StackPanel>
+
+        <!--ContentPanel - zusätzliche Inhalte hier platzieren-->
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+            <ProgressBar Name="progressbar" Height="10"/>
+            <ListBox x:Name="lbothreads" Height="527" IsEnabled="True" VerticalAlignment="Bottom" SelectionChanged="lbothreads_SelectionChanged">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Margin="0,1,0,0" Width="450" Orientation="Horizontal" Background="{Binding backgroundColor}">
+                            <StackPanel Width="42"  Orientation="Vertical" HorizontalAlignment="Left">
+                                <Image x:Name="rtbpic" Height="37" Width="37" Source="{Binding Icon}" />
+                            </StackPanel>
+                            <StackPanel HorizontalAlignment="Left" Width="450" Orientation="Vertical">
+                                <TextBlock x:Name="tblsubject" Width="358" HorizontalAlignment="Left" Text="{Binding Title}" FontSize="24" FontWeight="{Binding Unread}" TextWrapping="Wrap" Foreground="White" />
+                                <TextBlock x:Name="tbldate" Height="24" Width="358" HorizontalAlignment="Left" Text="{Binding lastPostDate}" FontSize="18" FontStyle="Italic" TextWrapping="Wrap" Foreground="White" />
+                                <TextBlock x:Name="tblusername" Height="24" Width="358" HorizontalAlignment="Left" Text="{Binding lastPostUsername}" FontSize="18" FontStyle="Italic" TextWrapping="Wrap" Foreground="White" />
+                            </StackPanel>
+
+                        </StackPanel>
+                        
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+                
+            </ListBox>
+        </Grid>
+    </Grid>
+
+    <phone:PhoneApplicationPage.Resources>
+        <shell:ApplicationBar x:Key="bardelete" IsVisible="True" IsMenuEnabled="True" BackgroundColor="#FF5A5C75" ForegroundColor="White">
+            <shell:ApplicationBarIconButton IconUri="/Model/Icons/Metro/Updater.png" Text="{StaticResource lngOlderOnes}" Click="ApplicationBarIconButton_Click_2" />
+            <shell:ApplicationBarIconButton IconUri="/Model/Icons/Dark/appbar.refresh.rest.png" Text="{StaticResource lngRefresh}" Click="ApplicationBarIconButton_Click" />
+            <shell:ApplicationBarIconButton IconUri="/Model/Icons/Dark/appbar.delete.rest.png" Text="{StaticResource lngDelete}" Click="ApplicationBarIconButton_Click_1" />
+            <shell:ApplicationBarIconButton IconUri="/Model/Icons/Metro/UpdaterUp.png" Text="{StaticResource lngNewerOnes}" Click="ApplicationBarIconButton_Click_3" />
+        </shell:ApplicationBar>
+        <shell:ApplicationBar x:Key="bardone" IsVisible="True" IsMenuEnabled="True" BackgroundColor="#FF5A5C75" ForegroundColor="White">
+            <shell:ApplicationBarIconButton IconUri="/Model/Icons/Metro/Updater.png" Text="{StaticResource lngOlderOnes}" Click="ApplicationBarIconButton_Click_2" />
+            <shell:ApplicationBarIconButton IconUri="/Model/Icons/Dark/appbar.refresh.rest.png" Text="{StaticResource lngRefresh}" Click="ApplicationBarIconButton_Click" />
+            <shell:ApplicationBarIconButton IconUri="/Model/Icons/Dark/appbar.check.rest.png" Text="{StaticResource lngDone}" Click="ApplicationBarIconButton_Click_1" />
+            <shell:ApplicationBarIconButton IconUri="/Model/Icons/Metro/UpdaterUp.png" Text="{StaticResource lngNewerOnes}" Click="ApplicationBarIconButton_Click_3" />
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.Resources>
+</phone:PhoneApplicationPage>

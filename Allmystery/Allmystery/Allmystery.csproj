@@ -1,0 +1,557 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9A406AFC-F767-4AE4-84F9-C443ECE99FAC}</ProjectGuid>
+    <ProjectTypeGuids>{C089C8C0-30E0-4E22-80C0-CE093F111A43};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Allmystery</RootNamespace>
+    <AssemblyName>Allmystery</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <TargetFrameworkProfile>WindowsPhone71</TargetFrameworkProfile>
+    <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
+    <SilverlightApplication>true</SilverlightApplication>
+    <SupportedCultures>
+    </SupportedCultures>
+    <XapOutputs>true</XapOutputs>
+    <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
+    <XapFilename>Allmystery.xap</XapFilename>
+    <SilverlightManifestTemplate>Properties\AppManifest.xml</SilverlightManifestTemplate>
+    <SilverlightAppEntry>Allmystery.App</SilverlightAppEntry>
+    <ValidateXaml>true</ValidateXaml>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BugSense">
+      <HintPath>..\..\..\..\..\Desktop\BugSense-WP7-v0.9.9\BugSense\Silverlight\BugSense.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Phone" />
+    <Reference Include="Microsoft.Phone.Controls, Version=7.0.0.0, Culture=neutral, PublicKeyToken=24eec0d8c86cda1e, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Phone.Controls.Toolkit, Version=7.0.0.0, Culture=neutral, PublicKeyToken=b772ad94eb9ca604, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Phone.Interop" />
+    <Reference Include="Microsoft.Phone.Reactive" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\..\..\..\Desktop\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows" />
+    <Reference Include="system" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Xml" />
+    <Reference Include="mscorlib.extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WP7Contrib.View.Controls">
+      <HintPath>..\..\..\..\..\Desktop\WP7Contrib.View.Controls.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BaseApplicationPage.cs" />
+    <Compile Include="BookmarksPage.xaml.cs">
+      <DependentUpon>BookmarksPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ConversationPage.xaml.cs">
+      <DependentUpon>ConversationPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FindUserPage.xaml.cs">
+      <DependentUpon>FindUserPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FriendslistPage.xaml.cs">
+      <DependentUpon>FriendslistPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LoginPage.xaml.cs">
+      <DependentUpon>LoginPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Model\HttpPOSTModel.cs" />
+    <Compile Include="Model\PushModel.cs" />
+    <Compile Include="Model\TemplateModel.cs" />
+    <Compile Include="MorePage.xaml.cs">
+      <DependentUpon>MorePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MyConversationsPage.xaml.cs">
+      <DependentUpon>MyConversationsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NewPostPage.xaml.cs">
+      <DependentUpon>NewPostPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="OnlineUserPage.xaml.cs">
+      <DependentUpon>OnlineUserPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RegisterPage.xaml.cs">
+      <DependentUpon>RegisterPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SettingsPage.xaml.cs">
+      <DependentUpon>SettingsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Model\HttpGETModel.cs" />
+    <Compile Include="Model\LoginModel.cs" />
+    <Compile Include="MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Model\SettingsModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TemplatesPage.xaml.cs">
+      <DependentUpon>TemplatesPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ThreadsPage.xaml.cs">
+      <DependentUpon>ThreadsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SingleThreadPage.xaml.cs">
+      <DependentUpon>SingleThreadPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\BaseViewModel.cs" />
+    <Compile Include="ViewModel\BookmarksViewModel.cs" />
+    <Compile Include="ViewModel\CategoriesViewModel.cs" />
+    <Compile Include="ViewModel\ConversationsViewModel.cs" />
+    <Compile Include="ViewModel\DataTypes\Category.cs" />
+    <Compile Include="ViewModel\DataTypes\Conversation.cs" />
+    <Compile Include="ViewModel\DataTypes\Friend.cs" />
+    <Compile Include="ViewModel\DataTypes\MainViewModelEventArgs.cs" />
+    <Compile Include="ViewModel\DataTypes\Post.cs" />
+    <Compile Include="ViewModel\DataTypes\SingleConversation.cs" />
+    <Compile Include="ViewModel\DataTypes\Smiley.cs" />
+    <Compile Include="ViewModel\DataTypes\Template.cs" />
+    <Compile Include="ViewModel\DataTypes\Thread.cs" />
+    <Compile Include="ViewModel\DataTypes\User.cs" />
+    <Compile Include="ViewModel\Extensions\ApplicationBarExtension.cs" />
+    <Compile Include="ViewModel\FriendsViewModel.cs" />
+    <Compile Include="ViewModel\HTMLViewModel.cs" />
+    <Compile Include="ViewModel\LoginViewModel.cs" />
+    <Compile Include="ViewModel\LogoutViewModel.cs" />
+    <Compile Include="ViewModel\MainViewModel.cs" />
+    <Compile Include="ViewModel\SettingsViewModel.cs" />
+    <Compile Include="ViewModel\SingleConversationViewModel.cs" />
+    <Compile Include="ViewModel\SingleThreadViewModel.cs" />
+    <Compile Include="ViewModel\TemplateViewModel.cs" />
+    <Compile Include="ViewModel\ThreadsViewModel.cs" />
+    <Compile Include="ViewModel\UserDataViewModel.cs" />
+    <Compile Include="ViewModel\UserViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </ApplicationDefinition>
+    <Page Include="BookmarksPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ConversationPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FindUserPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FriendslistPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LoginPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MorePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MyConversationsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="NewPostPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="OnlineUserPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RegisterPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SettingsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TemplatesPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ThreadsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SingleThreadPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Model\Icons\Metro\Thumbs.db" />
+    <None Include="Properties\AppManifest.xml" />
+    <None Include="Properties\WMAppManifest.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="appbar.folder.rest.png" />
+    <Content Include="ApplicationIcon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Background.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="Model\Languages\German.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Resource>
+    <Content Include="Model\Icons\Metro\Acrobat.png" />
+    <Content Include="Model\Icons\Metro\ActiveSync.png" />
+    <Content Include="Model\Icons\Metro\AEButton.PNG" />
+    <Content Include="Model\Icons\Metro\Alarm.png" />
+    <Content Include="Model\Icons\Metro\Album.png" />
+    <Content Include="Model\Icons\Metro\album2.png" />
+    <Content Include="Model\Icons\Metro\ALTAB.png" />
+    <Content Include="Model\Icons\Metro\Android.png" />
+    <Content Include="Model\Icons\Metro\Applications.png" />
+    <Content Include="Model\Icons\Metro\audiobooster.png" />
+    <Content Include="Model\Icons\Metro\audiomanager.png" />
+    <Content Include="Model\Icons\Metro\auto vol2.png" />
+    <Content Include="Model\Icons\Metro\AutoCelan.png" />
+    <Content Include="Model\Icons\Metro\Backup.png" />
+    <Content Include="Model\Icons\Metro\Backup2.png" />
+    <Content Include="Model\Icons\Metro\bing.png" />
+    <Content Include="Model\Icons\Metro\BirthDayManila.PNG" />
+    <Content Include="Model\Icons\Metro\boomblox.png" />
+    <Content Include="Model\Icons\Metro\BsBTweaks.png" />
+    <Content Include="Model\Icons\Metro\BTToggle.png" />
+    <Content Include="Model\Icons\Metro\bubble breaker.png" />
+    <Content Include="Model\Icons\Metro\Calculator.png" />
+    <Content Include="Model\Icons\Metro\calendriar.png" />
+    <Content Include="Model\Icons\Metro\Camcorder.png" />
+    <Content Include="Model\Icons\Metro\Camera.png" />
+    <Content Include="Model\Icons\Metro\camera2.png" />
+    <Content Include="Model\Icons\Metro\camera3.png" />
+    <Content Include="Model\Icons\Metro\CashOrganizer.png" />
+    <Content Include="Model\Icons\Metro\CashOrganizerExpress.png" />
+    <Content Include="Model\Icons\Metro\changeScreen.png" />
+    <Content Include="Model\Icons\Metro\CHTEditor.png" />
+    <Content Include="Model\Icons\Metro\CleanRAM.png" />
+    <Content Include="Model\Icons\Metro\CleanRAMsettings.png" />
+    <Content Include="Model\Icons\Metro\cleartemp.png" />
+    <Content Include="Model\Icons\Metro\Clock.png" />
+    <Content Include="Model\Icons\Metro\commmanager.png" />
+    <Content Include="Model\Icons\Metro\connections2.png" />
+    <Content Include="Model\Icons\Metro\Controlpc.png" />
+    <Content Include="Model\Icons\Metro\CoPilot8.png" />
+    <Content Include="Model\Icons\Metro\CorePlayer.png" />
+    <Content Include="Model\Icons\Metro\CSMI icon changer.png" />
+    <Content Include="Model\Icons\Dark\appbar.add.rest.png" />
+    <Content Include="Model\Icons\Dark\appbar.back.rest.png" />
+    <Content Include="Model\Icons\Dark\appbar.basecircle.rest.png" />
+    <Content Include="Model\Icons\Dark\appbar.cancel.rest.png" />
+    <Content Include="Model\Icons\Dark\appbar.check.rest.png" />
+    <Content Include="Model\Icons\Dark\appbar.close.rest.png" />
+    <Content Include="Model\Icons\Dark\appbar.delete.rest.png" />
+    <Content Include="Model\Icons\Dark\appbar.download.rest.png" />
+    <Content Include="Model\Icons\Dark\appbar.edit.rest.png" />
+    <Content Include="Model\Icons\Dark\appbar.favs.addto.rest.png" />
+    <Content Include="Model\Icons\Dark\appbar.favs.rest.png" />
+    <Content Include="Model\Icons\Dark\appbar.feature.camera.rest.png" />
+    <Content Include="Model\Icons\Dark\appbar.feature.email.rest.png" />
+    <Content Include="Model\Icons\Dark\appbar.feature.search.rest.png" />
+    <Content Include="Model\Icons\Dark\appbar.feature.settings.rest.png" />
+    <Content Include="Model\Icons\Dark\appbar.feature.video.rest.png" />
+    <Content Include="Model\Icons\Dark\appbar.folder.rest.png" />
+    <Content Include="Model\Icons\Dark\appbar.minus.rest.png" />
+    <Content Include="Model\Icons\Dark\appbar.new.rest.png" />
+    <Content Include="Model\Icons\Dark\appbar.next.rest.png" />
+    <Content Include="Model\Icons\Dark\appbar.overflowdots.png" />
+    <Content Include="Model\Icons\Dark\appbar.questionmark.rest.png" />
+    <Content Include="Model\Icons\Dark\appbar.refresh.rest.png" />
+    <Content Include="Model\Icons\Dark\appbar.save.rest.png" />
+    <Content Include="Model\Icons\Dark\appbar.share.rest.png" />
+    <Content Include="Model\Icons\Dark\appbar.stop.rest.png" />
+    <Content Include="Model\Icons\Dark\appbar.sync.rest.png" />
+    <Content Include="Model\Icons\Dark\appbar.transport.ff.rest.png" />
+    <Content Include="Model\Icons\Dark\appbar.transport.pause.rest.png" />
+    <Content Include="Model\Icons\Dark\appbar.transport.play.rest.png" />
+    <Content Include="Model\Icons\Dark\appbar.transport.rew.rest.png" />
+    <Content Include="Model\Icons\Dark\appbar.upload.rest.png" />
+    <Resource Include="Model\Icons\Light\appbar.add.rest.png" />
+    <Resource Include="Model\Icons\Light\appbar.back.rest.png" />
+    <Resource Include="Model\Icons\Light\appbar.basecircle.rest.png" />
+    <Resource Include="Model\Icons\Light\appbar.cancel.rest.png" />
+    <Resource Include="Model\Icons\Light\appbar.check.rest.png" />
+    <Resource Include="Model\Icons\Light\appbar.close.rest.png" />
+    <Resource Include="Model\Icons\Light\appbar.delete.rest.png" />
+    <Resource Include="Model\Icons\Light\appbar.download.rest.png" />
+    <Resource Include="Model\Icons\Light\appbar.edit.rest.png" />
+    <Resource Include="Model\Icons\Light\appbar.favs.addto.rest.png" />
+    <Resource Include="Model\Icons\Light\appbar.favs.rest.png" />
+    <Resource Include="Model\Icons\Light\appbar.feature.camera.rest.png" />
+    <Resource Include="Model\Icons\Light\appbar.feature.email.rest.png" />
+    <Resource Include="Model\Icons\Light\appbar.feature.search.rest.png" />
+    <Resource Include="Model\Icons\Light\appbar.feature.settings.rest.png" />
+    <Resource Include="Model\Icons\Light\appbar.feature.video.rest.png" />
+    <Resource Include="Model\Icons\Light\appbar.folder.rest.png" />
+    <Resource Include="Model\Icons\Light\appbar.minus.rest.png" />
+    <Resource Include="Model\Icons\Light\appbar.new.rest.png" />
+    <Resource Include="Model\Icons\Light\appbar.next.rest.png" />
+    <Resource Include="Model\Icons\Light\appbar.overflowdots.png" />
+    <Resource Include="Model\Icons\Light\appbar.questionmark.rest.png" />
+    <Resource Include="Model\Icons\Light\appbar.refresh.rest.png" />
+    <Resource Include="Model\Icons\Light\appbar.save.rest.png" />
+    <Resource Include="Model\Icons\Light\appbar.share.rest.png" />
+    <Resource Include="Model\Icons\Light\appbar.stop.rest.png" />
+    <Resource Include="Model\Icons\Light\appbar.sync.rest.png" />
+    <Resource Include="Model\Icons\Light\appbar.transport.ff.rest.png" />
+    <Resource Include="Model\Icons\Light\appbar.transport.pause.rest.png" />
+    <Resource Include="Model\Icons\Light\appbar.transport.play.rest.png" />
+    <Resource Include="Model\Icons\Light\appbar.transport.rew.rest.png" />
+    <Resource Include="Model\Icons\Light\appbar.upload.rest.png" />
+    <Content Include="Model\Icons\Metro\dictaphone.PNG" />
+    <Content Include="Model\Icons\Metro\ebook-reader.png" />
+    <Content Include="Model\Icons\Metro\Evernote.png" />
+    <Content Include="Model\Icons\Metro\Excel.png" />
+    <Content Include="Model\Icons\Metro\experiment 13.png" />
+    <Content Include="Model\Icons\Metro\Explorer.png" />
+    <Content Include="Model\Icons\Metro\F - BT.png" />
+    <Content Include="Model\Icons\Metro\f - calls.png" />
+    <Content Include="Model\Icons\Metro\f - connections.png" />
+    <Content Include="Model\Icons\Metro\F - games %282%29.png" />
+    <Content Include="Model\Icons\Metro\F - games.png" />
+    <Content Include="Model\Icons\Metro\f - language.png" />
+    <Content Include="Model\Icons\Metro\f - messaging.png" />
+    <Content Include="Model\Icons\Metro\f - multimmedia.png" />
+    <Content Include="Model\Icons\Metro\f - navigation.png" />
+    <Content Include="Model\Icons\Metro\F - office.png" />
+    <Content Include="Model\Icons\Metro\f - outlook.png" />
+    <Content Include="Model\Icons\Metro\f - personal.png" />
+    <Content Include="Model\Icons\Metro\F - phones.png" />
+    <Content Include="Model\Icons\Metro\f - setting.png" />
+    <Content Include="Model\Icons\Metro\f - settings.png" />
+    <Content Include="Model\Icons\Metro\f - tools.png" />
+    <Content Include="Model\Icons\Metro\f - torch_button.png" />
+    <Content Include="Model\Icons\Metro\F-messaging2.png" />
+    <Content Include="Model\Icons\Metro\F.png" />
+    <Content Include="Model\Icons\Metro\F1.png" />
+    <Content Include="Model\Icons\Metro\Facebook.png" />
+    <Content Include="Model\Icons\Metro\file-explorer.png" />
+    <Content Include="Model\Icons\Metro\FileExplorer.png" />
+    <Content Include="Model\Icons\Metro\fim.png" />
+    <Content Include="Model\Icons\Metro\flight-mode.png" />
+    <Content Include="Model\Icons\Metro\flight-mode_2.png" />
+    <Content Include="Model\Icons\Metro\FLIX.PNG" />
+    <Content Include="Model\Icons\Metro\Folder.png" />
+    <Content Include="Model\Icons\Metro\Footprints.png" />
+    <Content Include="Model\Icons\Metro\Freda.PNG" />
+    <Content Include="Model\Icons\Metro\FreeUpRAM.png" />
+    <Content Include="Model\Icons\Metro\fruity.png" />
+    <Content Include="Model\Icons\Metro\G-Weather.png" />
+    <Content Include="Model\Icons\Metro\G-Weather2.png" />
+    <Content Include="Model\Icons\Metro\game.png" />
+    <Content Include="Model\Icons\Metro\Games.png" />
+    <Content Include="Model\Icons\Metro\Garmin.PNG" />
+    <Content Include="Model\Icons\Metro\godaft.png" />
+    <Content Include="Model\Icons\Metro\GoogleMaps %282%29.PNG" />
+    <Content Include="Model\Icons\Metro\GoogleMaps.png" />
+    <Content Include="Model\Icons\Metro\GPS.png" />
+    <Content Include="Model\Icons\Metro\GRemote.png" />
+    <Content Include="Model\Icons\Metro\groovefish.png" />
+    <Content Include="Model\Icons\Metro\help %282%29.png" />
+    <Content Include="Model\Icons\Metro\Help.png" />
+    <Content Include="Model\Icons\Metro\home %282%29.png" />
+    <Content Include="Model\Icons\Metro\Home.png" />
+    <Content Include="Model\Icons\Metro\Hotspot.png" />
+    <Content Include="Model\Icons\Metro\HTC music.png" />
+    <Content Include="Model\Icons\Metro\IconChanger.png" />
+    <Content Include="Model\Icons\Metro\IE.png" />
+    <Content Include="Model\Icons\Metro\iGO.png" />
+    <Content Include="Model\Icons\Metro\images &amp; videos.png" />
+    <Content Include="Model\Icons\Metro\imdb.png" />
+    <Content Include="Model\Icons\Metro\Info.png" />
+    <Content Include="Model\Icons\Metro\InternetExplorer.png" />
+    <Content Include="Model\Icons\Metro\InternetSharing.PNG" />
+    <Content Include="Model\Icons\Metro\Java.png" />
+    <Content Include="Model\Icons\Metro\jblend.png" />
+    <Content Include="Model\Icons\Metro\JSPA.png" />
+    <Content Include="Model\Icons\Metro\JWMD icon changer %282%29.png" />
+    <Content Include="Model\Icons\Metro\JWMD icon changer.png" />
+    <Content Include="Model\Icons\Metro\Kompass.png" />
+    <Resource Include="Model\Icons\Metro\KubikSMS.PNG" />
+    <Resource Include="Model\Icons\Metro\Light.png" />
+    <Resource Include="Model\Icons\Metro\lock.png" />
+    <Resource Include="Model\Icons\Metro\mail config.png" />
+    <Content Include="Model\Icons\Metro\Mail.png" />
+    <Resource Include="Model\Icons\Metro\Marketplace.png" />
+    <Resource Include="Model\Icons\Metro\Media Player.png" />
+    <Resource Include="Model\Icons\Metro\Messenger.png" />
+    <Resource Include="Model\Icons\Metro\MetalDetector.png" />
+    <Resource Include="Model\Icons\Metro\mic.png" />
+    <Resource Include="Model\Icons\Metro\MicrosoftMyPhone.PNG" />
+    <Resource Include="Model\Icons\Metro\midomi.png" />
+    <Resource Include="Model\Icons\Metro\MP3Cut.png" />
+    <Resource Include="Model\Icons\Metro\Music.png" />
+    <Resource Include="Model\Icons\Metro\music_2.png" />
+    <Resource Include="Model\Icons\Metro\MyMobiler.png" />
+    <Resource Include="Model\Icons\Metro\MyPhone.png" />
+    <Resource Include="Model\Icons\Metro\mystopwatch.png" />
+    <Resource Include="Model\Icons\Metro\navicomputer.png" />
+    <Resource Include="Model\Icons\Metro\Navigon.png" />
+    <Resource Include="Model\Icons\Metro\need for speed.png" />
+    <Resource Include="Model\Icons\Metro\no-vol.png" />
+    <Resource Include="Model\Icons\Metro\NoData.PNG" />
+    <Resource Include="Model\Icons\Metro\note zit.PNG" />
+    <Resource Include="Model\Icons\Metro\Note.PNG" />
+    <Content Include="Model\Icons\Metro\notes.png" />
+    <Resource Include="Model\Icons\Metro\nu.png" />
+    <Resource Include="Model\Icons\Metro\Office %282%29.png" />
+    <Resource Include="Model\Icons\Metro\Office.png" />
+    <Resource Include="Model\Icons\Metro\OMarket.png" />
+    <Resource Include="Model\Icons\Metro\OneNote.png" />
+    <Resource Include="Model\Icons\Metro\OpenGLModeSwitch.PNG" />
+    <Resource Include="Model\Icons\Metro\Opera.png" />
+    <Resource Include="Model\Icons\Metro\OperaMini2.png" />
+    <Resource Include="Model\Icons\Metro\outlook %282%29.png" />
+    <Resource Include="Model\Icons\Metro\Outlook.png" />
+    <Resource Include="Model\Icons\Metro\patience.png" />
+    <Resource Include="Model\Icons\Metro\Peep.png" />
+    <Content Include="Model\Icons\Metro\People.png" />
+    <Resource Include="Model\Icons\Metro\Phone.png" />
+    <Resource Include="Model\Icons\Metro\PhoneWeaver.png" />
+    <Resource Include="Model\Icons\Metro\photos.PNG" />
+    <Resource Include="Model\Icons\Metro\pictures.png" />
+    <Resource Include="Model\Icons\Metro\PIM.png" />
+    <Resource Include="Model\Icons\Metro\PocketRAR %282%29.PNG" />
+    <Resource Include="Model\Icons\Metro\PocketRAR.png" />
+    <Resource Include="Model\Icons\Metro\Powerpoint.png" />
+    <Resource Include="Model\Icons\Metro\print.png" />
+    <Resource Include="Model\Icons\Metro\Proximity.PNG" />
+    <Resource Include="Model\Icons\Metro\Qibla.png" />
+    <Resource Include="Model\Icons\Metro\quickGPS.png" />
+    <Resource Include="Model\Icons\Metro\QuickMark.PNG" />
+    <Resource Include="Model\Icons\Metro\radioFM.png" />
+    <Resource Include="Model\Icons\Metro\Registry.png" />
+    <Resource Include="Model\Icons\Metro\resco bubbles.png" />
+    <Resource Include="Model\Icons\Metro\resco snake.png" />
+    <Resource Include="Model\Icons\Metro\RescoExp.png" />
+    <Resource Include="Model\Icons\Metro\RSS.png" />
+    <Resource Include="Model\Icons\Metro\S2P.png" />
+    <Resource Include="Model\Icons\Metro\S2U2.png" />
+    <Resource Include="Model\Icons\Metro\Scan2PDF.png" />
+    <Resource Include="Model\Icons\Metro\ScreenCap2.png" />
+    <Resource Include="Model\Icons\Metro\SDFORMAT.png" />
+    <Resource Include="Model\Icons\Metro\SearchWidget.png" />
+    <Resource Include="Model\Icons\Metro\Settings.png" />
+    <Resource Include="Model\Icons\Metro\sfr TV.png" />
+    <Resource Include="Model\Icons\Metro\sfr wifi.png" />
+    <Resource Include="Model\Icons\Metro\shazam.PNG" />
+    <Resource Include="Model\Icons\Metro\Shopping List.png" />
+    <Resource Include="Model\Icons\Metro\Shutdown.png" />
+    <Resource Include="Model\Icons\Metro\sim.png" />
+    <Resource Include="Model\Icons\Metro\SKKVFileExplorer.png" />
+    <Resource Include="Model\Icons\Metro\SKTools.png" />
+    <Resource Include="Model\Icons\Metro\Skyfire.png" />
+    <Resource Include="Model\Icons\Metro\SmartMap.PNG" />
+    <Resource Include="Model\Icons\Metro\smartwatch.png" />
+    <Resource Include="Model\Icons\Metro\SMS.png" />
+    <Resource Include="Model\Icons\Metro\soccer touch.png" />
+    <Resource Include="Model\Icons\Metro\softreset.png" />
+    <Resource Include="Model\Icons\Metro\SoftX Secure Notes.PNG" />
+    <Resource Include="Model\Icons\Metro\SPB Wireless Popup.PNG" />
+    <Resource Include="Model\Icons\Metro\SPB Wireless.PNG" />
+    <Resource Include="Model\Icons\Metro\Spb-tv.png" />
+    <Resource Include="Model\Icons\Metro\Spb-wirelessmon.png" />
+    <Resource Include="Model\Icons\Metro\SpbTime.png" />
+    <Resource Include="Model\Icons\Metro\Start.png" />
+    <Resource Include="Model\Icons\Metro\Suche.png" />
+    <Resource Include="Model\Icons\Metro\system.png" />
+    <Resource Include="Model\Icons\Metro\TachesZit.png" />
+    <Resource Include="Model\Icons\Metro\TagReader.png" />
+    <Resource Include="Model\Icons\Metro\TaskManager.png" />
+    <Resource Include="Model\Icons\Metro\TaskManila.PNG" />
+    <Resource Include="Model\Icons\Metro\tasks.png" />
+    <Resource Include="Model\Icons\Metro\TCPMP.png" />
+    <Resource Include="Model\Icons\Metro\teeter.png" />
+    <Resource Include="Model\Icons\Metro\ThrottleLauncher.png" />
+    <Resource Include="Model\Icons\Metro\ThrottleLauncherConfig.png" />
+    <Resource Include="Model\Icons\Metro\TimeSynch.png" />
+    <Resource Include="Model\Icons\Metro\Tomtom.png" />
+    <Resource Include="Model\Icons\Metro\Tomtom2.png" />
+    <Resource Include="Model\Icons\Metro\TotalCommander.png" />
+    <Resource Include="Model\Icons\Metro\Touch-Weather.png" />
+    <Resource Include="Model\Icons\Metro\Touch-Weather2.png" />
+    <Resource Include="Model\Icons\Metro\TouchTwit.png" />
+    <Resource Include="Model\Icons\Metro\Translator.PNG" />
+    <Resource Include="Model\Icons\Metro\trein.png" />
+    <Resource Include="Model\Icons\Metro\TV.png" />
+    <Resource Include="Model\Icons\Metro\Twitter.png" />
+    <Content Include="Model\Icons\Metro\Updater.png" />
+    <Resource Include="Model\Icons\Metro\Utillities.png" />
+    <Resource Include="Model\Icons\Metro\weather %282%29.png" />
+    <Resource Include="Model\Icons\Metro\WEATHER.png" />
+    <Resource Include="Model\Icons\Metro\weather2.png" />
+    <Resource Include="Model\Icons\Metro\WeatherCIty.png" />
+    <Resource Include="Model\Icons\Metro\webplay.png" />
+    <Resource Include="Model\Icons\Metro\wfrouter.png" />
+    <Resource Include="Model\Icons\Metro\wifi remote acces.PNG" />
+    <Resource Include="Model\Icons\Metro\wifi zit.png" />
+    <Resource Include="Model\Icons\Metro\WiFi.PNG" />
+    <Resource Include="Model\Icons\Metro\WiFi2.png" />
+    <Resource Include="Model\Icons\Metro\Windows.png" />
+    <Resource Include="Model\Icons\Metro\WinMoSquare.png" />
+    <Resource Include="Model\Icons\Metro\Word.png" />
+    <Resource Include="Model\Icons\Metro\wordmobilecard.png" />
+    <Resource Include="Model\Icons\Metro\X1SettingsTool.png" />
+    <Resource Include="Model\Icons\Metro\xtrakt.png" />
+    <Resource Include="Model\Icons\Metro\YouTube.png" />
+    <Resource Include="Model\Icons\Metro\Zoomer.png" />
+    <Content Include="Model\Icons\Metro\UpdaterUp.png" />
+    <Content Include="SplashScreenImage.jpg" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.$(TargetFrameworkProfile).Overrides.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions />
+</Project>

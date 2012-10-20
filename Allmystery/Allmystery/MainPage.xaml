@@ -1,0 +1,72 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="Allmystery.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="696"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    shell:SystemTray.IsVisible="True" Loaded="PhoneApplicationPage_Loaded" OrientationChanged="PhoneApplicationPage_OrientationChanged">
+
+    <!--LayoutRoot ist das Stammraster, in dem alle anderen Seiteninhalte platziert werden-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel enthält den Namen der Anwendung und den Seitentitel-->
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
+            <TextBlock x:Name="ApplicationTitle" Text="{Binding Status}" Style="{StaticResource PhoneTextNormalStyle}" Tap="ApplicationTitle_Tap" />
+            <TextBlock x:Name="PageTitle" Text="Rubriken" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+        </StackPanel>
+
+        <!--ContentPanel - zusätzliche Inhalte hier platzieren-->
+        <Grid x:Name="ContentPanel" Margin="12,139,12,0" Grid.RowSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="406*" />
+                <ColumnDefinition Width="47*" />
+                <ColumnDefinition Width="3*" />
+            </Grid.ColumnDefinitions>
+            <ListBox x:Name="lbosubjects" Height="479" IsEnabled="True" VerticalAlignment="Bottom" SelectionChanged="lbosubjects_SelectionChanged" Grid.ColumnSpan="3" Margin="0,0,0,78">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Margin="0,1,0,0" Orientation="Horizontal" Background="{Binding backgroundColor}">
+                            <StackPanel Width="80" Orientation="Horizontal" HorizontalAlignment="Left">
+                                <Image x:Name="rtbpic" Height="74" Width="74" Source="{Binding Pic}" />
+                            </StackPanel>
+                            <StackPanel HorizontalAlignment="Left" Width="432" Orientation="Vertical">   
+                                <TextBlock x:Name="tblsubject" Width="354" HorizontalAlignment="Left" Text="{Binding titleLong}" FontSize="24" FontWeight="Bold" TextWrapping="Wrap" Foreground="White" />
+                                <TextBlock x:Name="tbllastposttitle" Width="354" HorizontalAlignment="Left" Text="{Binding lastPostTitle}" FontSize="18" TextWrapping="Wrap" Foreground="White" />
+                                <TextBlock x:Name="tbllastpostdate" Width="354" HorizontalAlignment="Left" Text="{Binding lastPostDate}" FontSize="18" TextWrapping="Wrap" FontStyle="Italic" Foreground="White" />
+                                <TextBlock x:Name="tbllastpostusername" Width="354" HorizontalAlignment="Left" Text="{Binding lastPostUsername}" FontSize="18" TextWrapping="Wrap" FontStyle="Italic" Foreground="White" />
+                            </StackPanel>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+            <Button Content="{StaticResource lngAll}" Height="72" HorizontalAlignment="Left" Margin="100,485,0,0" Name="butall" VerticalAlignment="Top" Width="110" Click="butall_Click" />
+            <Button Content="{StaticResource lngLastOnes}" Height="72" HorizontalAlignment="Left" Margin="195,485,0,0" Name="butlastones" VerticalAlignment="Top" Width="118" Click="butlastones_Click" />
+            <Button Content="{StaticResource lngChoosen}" Height="72" HorizontalAlignment="Left" Margin="298,485,0,0" Name="butchoosen" VerticalAlignment="Top" Width="158" Grid.ColumnSpan="3" Click="butchoosen_Click" />
+            <Button Content="{StaticResource lngNew}" Height="72" HorizontalAlignment="Left" Margin="0,485,0,0" Name="butnew" VerticalAlignment="Top" Width="111" Click="butnew_Click" />
+        </Grid>
+    </Grid>
+ 
+    <!--Beispielcode für die Verwendung von ApplicationBar-->
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True" BackgroundColor="#FF5A5C75" ForegroundColor="White">
+            
+            <shell:ApplicationBarIconButton IconUri="/Model/Icons/Metro/notes.png" Text="{StaticResource lngOwnThreads}" x:Name="bibownthreads" Click="bibownthreads_Click" />
+            <shell:ApplicationBarIconButton IconUri="/Model/Icons/Metro/People.png" Text="{StaticResource lngFriends}" x:Name="bibfriends" Click="bibfriends_Click" />
+            <shell:ApplicationBarIconButton IconUri="/Model/Icons/Metro/Mail.png" Text="{StaticResource lngMessages}" x:Name="bibmessages" Click="bibmessages_Click" />
+            <shell:ApplicationBarIconButton IconUri="/Model/Icons/Dark/appbar.feature.settings.rest.png" Text="{StaticResource lngMore}" x:Name="bibmore" Click="bibmore_Click" />
+            
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
+
+</phone:PhoneApplicationPage>
